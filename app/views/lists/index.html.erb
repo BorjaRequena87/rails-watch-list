@@ -1,9 +1,14 @@
-<h1>List</h1>
+<%= cl_image_tag("https://res.cloudinary.com/dubo9dr9g/image/upload/v1622213997/htpwzmiw92ayknpplhnn.jpg",
+      width: 800, height: 300, crop: :fill) %>
+
+<h1>My Not-Ready-To-Show-My-Parents Movie List</h1>
 
 <ul>
   <% @lists.each do |list| %>
-     <li><%= list.name %></li>
+     <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
 </ul>
 
 <%= link_to "Create new list", new_list_path %>
+
+
